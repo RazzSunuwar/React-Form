@@ -7,3 +7,16 @@ Adding Forms in React
 
 You add a form with React like any other element:
 
+
+Handling forms
+
+Handling forms is about how you handle the data when it changes value or gets submitted.
+
+In HTML, form data is usually handled by the DOM.
+
+In React, form data is usually handled by the components.
+
+When the data is handled by the components, all the data is stored in the component state.
+
+You can control changes by adding event handlers in the onChange attribute:
+

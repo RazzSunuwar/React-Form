@@ -51,3 +51,8 @@ property name.
 
 Validating Form Input
 You can validate form input when the user is typing or you can wait until the form gets submitted.
+
+
+Adding Error Message
+Error messages in alert boxes can be annoying, so let's make an error message that is empty by
+default, but desplays the error when the user inputs anything invalid:

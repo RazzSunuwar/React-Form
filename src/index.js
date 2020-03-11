@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// Example: Same example, but with the validation at form submit:
+// Example: When you fill in your age as not numeric, an error message is displayed:
 
 class MyForm extends React.Component{
     constructor(props){
@@ -8,18 +8,20 @@ class MyForm extends React.Component{
         this.state = { 
         username: '',
         age: null,
+        errormessage: ''
         };
     }
-    mySubmitHandler = (event) => {
-        event.preventDefault();
-        let age = this.state.age;
-        if(!Number(age)) {
-            alert("Your age must be a number");
-        }
-    }
+
     myChangeHandler = (event) => {
         let nam = event.target.name;
         let val = event.target.value;
+        let err = '';
+        if (nam === "age") {
+            if (val !="" && !Number(val)) {
+                err = <strong>Your age must be a number</strong>;
+            }
+        }
+        this.setState({errormessage: err});
         this.setState({[nam]: val});
 
     }
@@ -39,16 +41,12 @@ class MyForm extends React.Component{
                 name = "age"
                 onChange = {this.myChangeHandler}
                 />
-                <br/>
-                <br/>
-                <input type='submit' />
+                {this.state.errormessage}
             </form>
         );
     };
 };
 
 ReactDOM.render(<MyForm />, document.getElementById('root'));
-// Below you will see the same example as above, but the validation is done when
-// the form gets submitted instead of when you write in the field.
 
 

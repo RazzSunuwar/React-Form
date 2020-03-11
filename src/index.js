@@ -33,5 +33,6 @@ class MyForm extends React.Component{
 };
 
 ReactDOM.render(<MyForm />, document.getElementById('root'));
+// Note: We use event.preventDefault() to prevent the form from actually being submitted.
 
 

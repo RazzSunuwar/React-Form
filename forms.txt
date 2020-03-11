@@ -64,3 +64,18 @@ The text element in React is slightly different from ordinary HTML.
 
 In HTML the value of a textarea was the text between the start tag <textarea> and
 the end tag </textarea>, in React the value of a textarea is placed in a value attribute:
+
+
+Select
+
+A drop down list, or a select box, in React is also a bit different from HTML.
+
+In HTML, the selected value in the drop down list was defined with the selected attribute:
+
+
+HTML
+<select>
+<option value="Lamborgini">Lamborgini</option>
+<option value="Ferrari" selected>Ferrari</option>
+<option value="Buggati">Buggati</option>
+</select>

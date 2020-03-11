@@ -6,18 +6,22 @@ class MyForm extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            description: 'The content of a textarea goes in the value attribute'
+            mycar: "Buggati"
         };
     };
 
     render() {
         return(
             <form>
-                <textarea value = {this.state.description} />
+                <select value={this.state.mycar}>
+                    <option value="Lamborgini">Lamborgini</option>
+                    <option value="Ferrari">Ferrari</option>
+                    <option value="Buggati">Buggati</option>
+                </select>
             </form>
         );
     };
-};
+};  
 
 ReactDOM.render(<MyForm />, document.getElementById('root'));
 

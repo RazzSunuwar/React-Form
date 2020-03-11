@@ -22,7 +22,9 @@ You can control changes by adding event handlers in the onChange attribute:
 
 
 Conditonal Rendering
-If you do not want to display the h1 element until the user has done any input, you can add an if statement.
+If you do not want to display the h1 element until the user has done any input, you can add an if
+statement.
+
 Look at the example below and note the following:
 
 1. We create an empty variable, in this example we call it header.
@@ -34,3 +36,14 @@ Look at the example below and note the following:
 
 Submitting forms
 You can control the submit action by adding an event handler in the onSubmit attribute:
+
+
+Mulltiple Input Fields
+You can control the values of more than one input field by adding a name attribute to each element.
+
+When you initialize the state in the constructor, use the field names.
+
+To access the fields in the event handler use the event.target.name and event.target.value syntax.
+
+To update the state in the this.setState method, use square brackets [bracket notation] around the
+property name.

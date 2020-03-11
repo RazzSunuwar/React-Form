@@ -79,3 +79,5 @@ HTML
 <option value="Ferrari" selected>Ferrari</option>
 <option value="Buggati">Buggati</option>
 </select>
+
+In React, the selected value is defined with a value attribute on the select tag:

@@ -26,3 +26,8 @@ class MyForm extends React.Component{
 };
 
 ReactDOM.render(<MyForm />, document.getElementById('root'));
+
+// Note: You must intilize the state in the constructor method before you can use it.
+// Note: You get access to the field to the value by using the event.target.value syntax.
+
+

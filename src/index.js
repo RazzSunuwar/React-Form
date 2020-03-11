@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// Example: When you fill in your age, you will get an alert if the age field is not numeric:
+// Example: Same example, but with the validation at form submit:
 
 class MyForm extends React.Component{
     constructor(props){
@@ -10,15 +10,18 @@ class MyForm extends React.Component{
         age: null,
         };
     }
+    mySubmitHandler = (event) => {
+        event.preventDefault();
+        let age = this.state.age;
+        if(!Number(age)) {
+            alert("Your age must be a number");
+        }
+    }
     myChangeHandler = (event) => {
         let nam = event.target.name;
         let val = event.target.value;
-        if (nam === "age") {
-            if (!Number(val)) {
-                alert("Your age must be a number");
-            }
-        }
         this.setState({[nam]: val});
+
     }
     render() {
         return(
@@ -36,6 +39,9 @@ class MyForm extends React.Component{
                 name = "age"
                 onChange = {this.myChangeHandler}
                 />
+                <br/>
+                <br/>
+                <input type='submit' />
             </form>
         );
     };

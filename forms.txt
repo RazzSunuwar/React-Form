@@ -31,3 +31,6 @@ Look at the example below and note the following:
 
 3. We insert the header variable in the output, using curly brackets.
 
+
+Submitting forms
+You can control the submit action by adding an event handler in the onSubmit attribute:

@@ -1,30 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // Example:
-// Display the header only if username is defined:
+// Add a submit button and an event handler in the onSubmit attribute:
 
 class MyForm extends React.Component{
     constructor(props){
         super(props);
         this.state = { username: ''};
     }
+    mysubmitHandler = (event) => {
+        event.preventDefault();
+        alert("You are submitting " + this.state.username); 
+    }
     myChangeHandler = (event) => {
         this.setState({username: event.target.value});
     }
-    render(){
-        let header = '';
-        if (this.state.username){
-            header = <h1>Hello {this.state.username}</h1>
-        } else {
-            header= '';
-        }
+    render() {
         return(
-            <form>
-                {header}
-                <p>Enter your name:</p>
+            <form onSubmit={this.mysubmitHandler}>
+                <h1>Hello {this.state.username}</h1>
+                <p>Enter your name, and submit:</p>
                 <input
                 type="text"
                 onChange={this.myChangeHandler}
+                />
+                <input
+                type= "Submit"
                 />
             </form>
         );

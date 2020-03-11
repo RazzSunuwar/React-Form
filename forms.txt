@@ -20,3 +20,14 @@ When the data is handled by the components, all the data is stored in the compon
 
 You can control changes by adding event handlers in the onChange attribute:
 
+
+Conditonal Rendering
+If you do not want to display the h1 element until the user has done any input, you can add an if statement.
+Look at the example below and note the following:
+
+1. We create an empty variable, in this example we call it header.
+
+2. We add an if statement to insert content to the header variable if the user has done any input.
+
+3. We insert the header variable in the output, using curly brackets.
+

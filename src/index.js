@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // Example:
-// Add an event handler in the onchange attribute, and let the event handler update the state object:
+// Display the header only if username is defined:
 
 class MyForm extends React.Component{
     constructor(props){
@@ -12,9 +12,15 @@ class MyForm extends React.Component{
         this.setState({username: event.target.value});
     }
     render(){
+        let header = '';
+        if (this.state.username){
+            header = <h1>Hello {this.state.username}</h1>
+        } else {
+            header= '';
+        }
         return(
             <form>
-                <h1>Hello {this.state.username}</h1>
+                {header}
                 <p>Enter your name:</p>
                 <input
                 type="text"
@@ -26,8 +32,5 @@ class MyForm extends React.Component{
 };
 
 ReactDOM.render(<MyForm />, document.getElementById('root'));
-
-// Note: You must intilize the state in the constructor method before you can use it.
-// Note: You get access to the field to the value by using the event.target.value syntax.
 
 

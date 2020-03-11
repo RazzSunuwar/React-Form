@@ -47,3 +47,7 @@ To access the fields in the event handler use the event.target.name and event.ta
 
 To update the state in the this.setState method, use square brackets [bracket notation] around the
 property name.
+
+
+Validating Form Input
+You can validate form input when the user is typing or you can wait until the form gets submitted.

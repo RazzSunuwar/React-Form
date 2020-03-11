@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// Example:
-//Write a form with two input fields:
+// Example: When you fill in your age, you will get an alert if the age field is not numeric:
 
 class MyForm extends React.Component{
     constructor(props){
@@ -14,13 +13,18 @@ class MyForm extends React.Component{
     myChangeHandler = (event) => {
         let nam = event.target.name;
         let val = event.target.value;
+        if (nam === "age") {
+            if (!Number(val)) {
+                alert("Your age must be a number");
+            }
+        }
         this.setState({[nam]: val});
     }
     render() {
         return(
             <form>
                 <h1>Hello {this.state.username} {this.state.age}</h1>
-                <p>Enter your name, and submit:</p>
+                <p>Enter your name:</p>
                 <input
                 type ="text"
                 name = "username"
@@ -38,7 +42,7 @@ class MyForm extends React.Component{
 };
 
 ReactDOM.render(<MyForm />, document.getElementById('root'));
-// Note: We use the same event handler function for both input fields, we could write one event
-// handler for each, but this gives us much cleaner code and is the preferred way in React.
+// Below you will see the same example as above, but the validation is done when
+// the form gets submitted instead of when you write in the field.
 
 

@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // Example:
-// Add a submit button and an event handler in the onSubmit attribute:
+// Write a form with two input fields:
 
 class MyForm extends React.Component{
     constructor(props){
         super(props);
-        this.state = { username: ''};
+        this.state = { username: '',
+        age: null,
+        };
     }
     mysubmitHandler = (event) => {
         event.preventDefault();
@@ -33,6 +35,7 @@ class MyForm extends React.Component{
 };
 
 ReactDOM.render(<MyForm />, document.getElementById('root'));
-// Note: We use event.preventDefault() to prevent the form from actually being submitted.
+// Note: We use the same event handler function for both input fields, we could write one event handler for each, but
+// this gives us much cleaner code and is the preferred way in React.
 
 
